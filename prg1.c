@@ -20,14 +20,14 @@ void findCommonDivisors(mpz_t *numbers, int n) {
     mpz_init(divisor);
 
     printf("Common divisors: ");
-    for (mpz_set_ui(divisor, 1); mpz_cmp(divisor, gcd_result) <= 0; mpz_add_ui(divisor, divisor, 1)) {
-        if (mpz_divisible_p(gcd_result, divisor)) {
+    for (mpz_set_ui(divisor, 1); mpz_cmp(divisor, gcd) <= 0; mpz_add_ui(divisor, divisor, 1)) {
+        if (mpz_divisible_p(gcd, divisor)) {
             gmp_printf("%Zd ", divisor);
         }
     }
     printf("\n");
 
-    mpz_clear(gcd_result);
+    mpz_clear(gcd);
     mpz_clear(divisor);
 }
 
